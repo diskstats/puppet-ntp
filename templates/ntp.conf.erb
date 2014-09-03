@@ -1,0 +1,29 @@
+<% @servers.each do |server| -%>
+server <%= server %>
+<% end -%>
+
+<% if @driftfile -%>
+driftfile /var/lib/ntp/drift
+<% end -%>
+
+<% if @restrict -%>
+<% @restrict.each do |entry| -%>
+restrict <%= entry %>
+<% end -%>
+<% end -%>
+
+<% if @includefile -%>
+<% @includefile.each do |entry| -%>
+includefile <%= entry %>
+<% end -%>
+<% end -%>
+
+<% if @keys -%>
+keys /etc/ntp/keys
+<% end -%>
+
+<% if @disable -%>
+<% @disable.each do |options| -%>
+disable <%= options %>
+<% end -%>
+<% end -%>
