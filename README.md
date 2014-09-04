@@ -29,7 +29,7 @@ Lean RedHat NTP module, with the most common settings.
   }
 ```
 
-##### 4) Use the OS supplied ntp.conf file, servers may also be specified.
+##### 4) Use the default OS provided ntp.conf file, servers may also be specified.
 ```puppet
   class { '::ntp':
     conffile => "ntp/${::osfamily}/ntp.conf-${::operatingsystemmajrelease}.erb",
@@ -44,6 +44,7 @@ Lean RedHat NTP module, with the most common settings.
 ```
 
 ## Parameters
+See your OS man pages for a description of most of the parameters.
 
 `server`
 - *type:* array 
